@@ -5,9 +5,11 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux';
 import { submitForm } from './../actions';
-import Message from './../messages';
+import Message from './../message';
 
 injectTapEventPlugin();
+
+const style = {width: 350};
 
 class App extends Component {
 
@@ -36,10 +38,10 @@ class App extends Component {
     return(
       <MuiThemeProvider>
         <div className='form'>
-          <TextField hintText="First Name" floatingLabelText="Enter First Name" ref='firstName'/><br/>
-          <TextField hintText="Last Name" floatingLabelText="Enter Last Name" ref='lastName'/><br/>
-          <TextField hintText="Email Adress" floatingLabelText="Enter Email Adress" ref='emailAdress'/><br/>
-          <TextField type='password' hintText="Password" floatingLabelText="Enter Password" ref='password'/><br/>
+          <TextField hintText="Имя" floatingLabelText="Введите имя" ref='firstName' style={style}/><br/>
+          <TextField hintText="Фамилия" floatingLabelText="Введите фамилию" ref='lastName' style={style}/><br/>
+          <TextField hintText="Электронная почта" floatingLabelText="Введите адрес этектронной почты" ref='emailAdress' style={style}/><br/>
+          <TextField type='password' hintText="Пароль" floatingLabelText="Введите пароль" ref='password' style={style}/><br/>
           <RaisedButton label='Submit' primary={true} onTouchTap={this.handleSubmit}/>
         </div>
       </MuiThemeProvider>
